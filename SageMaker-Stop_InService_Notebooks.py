@@ -6,11 +6,6 @@ sm_notebooks = []
 sm = boto3.client('sagemaker')
 response = sm.list_notebook_instances(StatusEquals='InService')
 
-sm = boto3.client('sagemaker')
-
-response = sm.list_notebook_instances(StatusEquals='InService')
-
-
 for r in response['NotebookInstances']:
         sm_notebooks.append(r['NotebookInstanceName'])
 
